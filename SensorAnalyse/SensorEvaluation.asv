@@ -21,8 +21,7 @@ intX(1) = loopTime(1)*xAcc(1);
 
 for i = 2:size(loopTime)
     intX(i) = intX(i-1)+loopTime(i)*xAcc(i);
-    intY(i) = intY(i-1)+loopTime(i)*yAcc(i);
-    intZ(i) = intZ(i-1)+loopTime(i)*zAcc(i);
+
 end
 
 %% Prozessortime
@@ -32,6 +31,7 @@ meanLoopTime = mean(loopTime);
 varLoopTime = var(loopTime);
 
 subplot (2,1,1)
+loop
 histogram(loopTime,0:20);
 subplot(2,1,2)
 plot(time, [loopTime ; 0]);
@@ -64,9 +64,9 @@ subplot(2,1,1)
 title('Position Integrated From Acceleration')
 hold on
 plot(time, [intX, 0])
-plot(time, [intY, 0])
-plot(time, [intZ, 0])
-legend('X','Y','Z')
+plot(time, sensPitch)
+plot(time, sensRoll)
+legend('Pitch','Roll','Yaw')
 subplot(2,1,2)
 title('Acceleration')
 hold on
@@ -74,5 +74,5 @@ plot(time, xAcc)
 plot(time, yAcc)
 plot(time, zAcc)
 legend('X','Y','Z')
-mean([xAcc , yAcc, zAcc])
+
 
