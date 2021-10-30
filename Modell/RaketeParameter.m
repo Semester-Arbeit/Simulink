@@ -1,11 +1,11 @@
 close all 
 clc
 %%  Physical Parameter
-Gravitation = 9.81; 
-ObjectMass = 1; %totale masse
-PitchTraegheit = 1;
-RollTraegheit = 1;
-YawTraegheit = 1;
+Gravitation = 9.8067;  % nach metas.ch... gravitationszunen schweiz
+ObjectMass = 3.34; %gemessen 29.10
+PitchTraegheit = 0.0362;%gemessen 29.10
+RollTraegheit = 0.0430;%gemessen 29.10
+YawTraegheit = 0.0335;%gemessen 29.10
 PropGain = 15; % prop signal * Propgain = auftriebKraft
 DriftGain = 1; %  wieviel Kraft generiert eine Schieflage in rad
 FlapGain = 1; % (abweichung von 0 pos in rad) * fla
