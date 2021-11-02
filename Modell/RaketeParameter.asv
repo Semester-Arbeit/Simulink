@@ -1,7 +1,7 @@
 close all 
 clc
 %%  Physical Parameter
-Gravitation = 9.8067;  % nach metas.ch... gravitationszonen schweiz
+Gravitation = 9.8067;  % nach metas.ch... gravitationszunen schweiz
 ObjectMass = 3.34; %gemessen 29.10
 PitchTraegheit = 0.0362;%gemessen 29.10
 RollTraegheit = 0.0430;%gemessen 29.10
