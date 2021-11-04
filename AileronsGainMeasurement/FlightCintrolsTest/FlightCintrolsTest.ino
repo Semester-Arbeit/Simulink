@@ -10,7 +10,7 @@ FlightControls flightSystem = FlightControls(&configurationData);
 
 
 void setup() {
-  double power = 80;
+  double power = 95;
   double pitch = 60;
   bool motor = true;
 
@@ -47,7 +47,7 @@ void setup() {
     Serial.print("Power:");
     Serial.println(0);
     Serial.println("Time To Write Results");    
-    delay(15000);
+    delay(11000);
     
     flightSystem.setAilerons(0, 0, 0);
     flipflap();

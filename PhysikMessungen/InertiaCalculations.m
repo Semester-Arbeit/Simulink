@@ -2,9 +2,9 @@
 
 %close all
 
-%PlotDataFromFile('RollInertiaPendel03')
+PlotDataFromFile('RollInertiaPendel03')
 PlotDataFromFile('PitchInertiaPendel02')
-%PlotDataFromFile('YawInertiaPendel02')
+PlotDataFromFile('YawInertiaPendel02')
 
 g=9.8067; %Erdbeschleunigung
 m=3.34; %Masse

@@ -1,5 +1,5 @@
 
-close all
+%close all
 clc
 
 

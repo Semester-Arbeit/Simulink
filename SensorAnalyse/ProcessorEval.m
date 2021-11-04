@@ -19,14 +19,14 @@ maxLooptime = max(loopTime);
 
 %% Prozessortime
 figure('Name',"Data: "+filenameOhneEndung,'NumberTitle','off')
-subplot(2,2,1)
 
-histogram(loopTime);
-
-subplot(2,2,2)
+subplot(2,1,1)
 plot(time, [loopTime ; 0]);
 
 
+subplot(2,1,2)
+
+histogram(loopTime);
 
 
 
