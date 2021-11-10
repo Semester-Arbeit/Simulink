@@ -10,7 +10,7 @@ PropGain = (ObjectMass*Gravitation)/0.8; % prop signal * Propgain = auftriebKraf
 PropOffset = 0.08; %Abstand von Propeller zu Massepunkt
 DriftGain = 1; %  wieviel Kraft generiert eine Schieflage in rad
 FlapGain = 1.3178; % (abweichung von 0 pos in rad) * FlapGain = Drehmoment auf Objekt Approximiert von Messungen
-
+%TODO recalculate flapgain in deg not rad
 
 
 %% Regler Parameter
