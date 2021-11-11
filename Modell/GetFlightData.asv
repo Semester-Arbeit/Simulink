@@ -1,3 +1,0 @@
-%[time,sensPitch,sensRoll,sensYaw,xGyro,yGyro,ZGyro,xAcc,yAcc,zAcc,latitude,longitude,altitude,cP,cR,cY_I] = readvars("1_FullFlight.csv");
-M = readtable("1_FullFlight.csv");
-M = removevars(M,{'cY_I'});

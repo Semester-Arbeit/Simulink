@@ -12,6 +12,10 @@ DriftGain = 1; %  wieviel Kraft generiert eine Schieflage in rad
 FlapGain = 1.3178; % (abweichung von 0 pos in rad) * FlapGain = Drehmoment auf Objekt Approximiert von Messungen
 %TODO recalculate flapgain in deg not rad
 
+RakParam = table(Gravitation,ObjectMass,PitchTraegheit,RollTraegheit,YawTraegheit,PropGain,PropOffset,DriftGain,FlapGain);
+clear("Gravitation","ObjectMass","PitchTraegheit","RollTraegheit","YawTraegheit","PropGain","PropOffset","DriftGain","FlapGain")
+
+
 
 %% Regler Parameter
 KpX = 5;
@@ -20,12 +24,20 @@ KpY = 5;
 KiY = 0.5;
 KpZ = 100;
 KiZ = 100;
-KpPitch = 2;
-KiPitch = 2;
+KpPitch = -2;
+KiPitch = -2;
 KpRoll = 1;
 KiRoll = 1;
 KpYaw = 1;
 KiYaw = 1;
+
+RegPar = table(KpX,KiX,KpY,KiY,KpZ,KiZ,KpPitch,KiPitch,KpRoll,KiRoll,KpYaw,KiYaw);
+
+clear("KpX","KiX","KpY","KiY","KpZ","KiZ","KpPitch","KiPitch","KpRoll","KiRoll","KpYaw","KiYaw")
+
+
+
+
 
 
 
