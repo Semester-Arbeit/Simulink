@@ -36,16 +36,13 @@ f.Position = [500 100 1000 1000];
 f.Name = "Pitch Regelwert";
 hold on
 
-cP = -SimRegler.PitchCorrection;
-cP = cP -mean(cP) + mean(FlightData.cP);
-cP = cP*2;
-
-cP = movmean(cP,100);
+cP = -FlightData.cP;
 %cP = cP +mean(SimRegler.PitchCorrection)- mean(cP);
 
-plot(SimRegler.Time,cP)
-plot(FlightData.Time,FlightData.cP)
+
+plot(SimRegler.Time,SimRegler.PitchCorrection)
+plot(FlightData.Time,cP)
 
 
-legend('sim', 'Flight')
+legend('flight', 'sim')
 
