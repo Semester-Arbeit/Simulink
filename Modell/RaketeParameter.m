@@ -9,8 +9,8 @@ YawTraegheit = 0.0335;%gemessen 29.10
 PropGain = (ObjectMass*Gravitation)/0.8; % prop signal * Propgain = auftriebKraft .. Annahme bei 0.8 schwebend
 PropOffset = 0.08; %Abstand von Propeller zu Massepunkt
 DriftGain = 1; %  wieviel Kraft generiert eine Schieflage in rad
-FlapGain = 1.3178; % (abweichung von 0 pos in rad) * FlapGain = Drehmoment auf Objekt Approximiert von Messungen
-%TODO recalculate flapgain in deg not rad
+FlapGain = 0.0235; % (abweichung von 0 pos in deg) * FlapGain = Drehmoment auf Objekt mit Least^2 von Messungen 90% und 100% Schub
+
 
 RakParam = table(Gravitation,ObjectMass,PitchTraegheit,RollTraegheit,YawTraegheit,PropGain,PropOffset,DriftGain,FlapGain);
 clear("Gravitation","ObjectMass","PitchTraegheit","RollTraegheit","YawTraegheit","PropGain","PropOffset","DriftGain","FlapGain")

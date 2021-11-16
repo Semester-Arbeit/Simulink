@@ -9,9 +9,13 @@ M = removevars(M,{'cY_I'});
 M.Time = M.Time./1000000; % in sekunden umwandeln
 M.Time = M.Time - M.Time(1);% setuptime bis zum Flugstart abziehen
 sampleTime = max(M.Time)/length(M.Time);% approx zeit zwischen samples
+%% change Regler Data
+RegPar.KpPitch= 0;
+RegPar.KiPitch= -2;
 
 
 
+%% Simulate  Data
 
 out=sim("ReglerVergleich.slx");
 T = timeseries2timetable(out.SimRegler);
@@ -22,30 +26,34 @@ T = timeseries2timetable(out.FlightData);
 FlightData = table(T.Time  ,T.Data(:,1),T.Data(:,2),T.Data(:,3),T.Data(:,4),T.Data(:,5),T.Data(:,6),T.Data(:,7),T.Data(:,8),T.Data(:,9),T.Data(:,10),T.Data(:,11),T.Data(:,12),T.Data(:,13),T.Data(:,14),T.Data(:,15),T.Data(:,16),T.Data(:,17),T.Data(:,18),T.Data(:,19),T.Data(:,20),...
     'VariableNames',{'Time','Xpos'     ,'Xspeed'   ,'Xacc'     ,'Ypos'     ,'Yspeed'   ,'Yacc'     ,'Zpos'     ,'Zspeed'   ,'Zacc'     ,'Pitchpos'  ,'Pitchspeed','Pitchacc'  ,'Rollpos'   ,'Rollspeed' ,'Rollacc'   ,'Yawpos'    ,'Yawspeed'  ,'Yawacc'    ,'cP'        ,'cR'});
 
+clear("T","M","out")
 
-clear("T","out")
-
-
-
-
-
-
+%% Visualize
 
 f = figure;
-f.Position = [500 100 1000 1000];
+f.Position = [312,383,622,455];
 f.Name = "Pitch Regelwert";
 hold on
 
-cP = -SimRegler.PitchCorrection;
-cP = cP -mean(cP) + mean(FlightData.cP);
-cP = cP*2;
+SimCP = SimRegler.PitchCorrection;
 
-cP = movmean(cP,100);
-%cP = cP +mean(SimRegler.PitchCorrection)- mean(cP);
+%SimCP = SimCP*2;
+%SimCP = SimCP -mean(SimCP) + mean(FlightData.cP);
+%SimCP = movmean(SimCP,100);
 
-plot(SimRegler.Time,cP)
+
+plot(SimRegler.Time,SimCP)
 plot(FlightData.Time,FlightData.cP)
 
+legend('Simulated', 'Flight')
 
-legend('sim', 'Flight')
+%% Integrated
+I = figure;
+I.Position = [1097,359,592,480];
+I.Name = "Pitch Regelwert";
+hold on
+
+plot(FlightData.Time,FlightData.Pitchpos)
+plot(FlightData.Time,FlightData.Pitchspeed)
+legend('pos', 'speed')
 

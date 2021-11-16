@@ -1,0 +1,2 @@
+run ../Modell/RaketeParameter.m
+
