@@ -10,7 +10,7 @@ M.Time = M.Time./1000000; % in sekunden umwandeln
 M.Time = M.Time - M.Time(1);% setuptime bis zum Flugstart abziehen
 sampleTime = max(M.Time)/length(M.Time);% approx zeit zwischen samples
 %% change Regler Data
-RegPar.KpPitch= 0;
+RegPar.KpPitch= -0;
 RegPar.KiPitch= -2;
 
 
@@ -36,7 +36,7 @@ f.Name = "Pitch Regelwert";
 hold on
 
 SimCP = SimRegler.PitchCorrection;
-
+%SimCP = detreend(SimRegler.PitchCorrection);
 %SimCP = SimCP*2;
 %SimCP = SimCP -mean(SimCP) + mean(FlightData.cP);
 %SimCP = movmean(SimCP,100);
@@ -55,5 +55,6 @@ hold on
 
 plot(FlightData.Time,FlightData.Pitchpos)
 plot(FlightData.Time,FlightData.Pitchspeed)
+%plot(FlightData.Time,cumtrapz(FlightData.Pitchspeed))
 legend('pos', 'speed')
 
