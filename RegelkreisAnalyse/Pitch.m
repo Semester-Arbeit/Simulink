@@ -1,3 +1,4 @@
+%% intro
 close all
 clc
 run ../Modell/RaketeParameter.m
@@ -7,10 +8,10 @@ run ../Modell/RaketeParameter.m
 
 
 %% define Ki & Kp
-% RegPar.KpPitch = 2;
-% RegPar.KiPitch= 2;
-% zet = RegPar.KpPitch/(2*RegPar.KiPitch*T)
-% T = sqrt(RakParam.PitchTraegheit/(2*RegPar.KiPitch*RakParam.FlapGain))
+RegPar.KpPitch = 2;
+RegPar.KiPitch= 2;
+zet = RegPar.KpPitch/(2*RegPar.KiPitch*T)
+T = sqrt(RakParam.PitchTraegheit/(2*RegPar.KiPitch*RakParam.FlapGain))
 
 %% define T & zet
 zet = .7;
@@ -26,6 +27,8 @@ disp(RegPar.KpPitch)
 %% Plot
 subplot(211)
 G_stoer = tf([2*RegPar.KiPitch*RakParam.FlapGain],[T^2 2*zet*T 1])
-step(G_stoer)
+G_pos = tf([1],[T^2 2*zet*T 1])
+
+step(G_pos)
  subplot(212)
- impulse(G_stoer)
+ impulse(G_pos)

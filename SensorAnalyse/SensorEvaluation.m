@@ -1,12 +1,11 @@
 
-%close all
+
 clc
 close 
 
-%PlotDataFromFile("YawRotationPositive")
-%ProcessorEval("NeuStdandart2_Nov")
 
-D = readtable("YawRotationPositive.csv");
+
+D = readtable("../Data/Pendel/YawInertiaPendel02.csv");
 D.Time=D.Time-D.Time(1);
 plot(D.Time,D.sensYaw)
 hold on
