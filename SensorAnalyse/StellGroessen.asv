@@ -1,0 +1,37 @@
+close all
+clc
+warning('OFF', 'MATLAB:table:ModifiedAndSavedVarnames')
+M = readtable("../Data/SensorTest_18.11/FlightLog05.csv");
+
+flight= M.sensRoll;
+stell = -M.cR;
+dif= flight-stell;
+
+
+f1 = figure;%--------------------------
+f1.Position = [24,104,990,858];
+f1.Name = "Pitch Regelwert";
+hold on
+legend()
+
+plot(M.Time,flight,'DisplayName','Flight')
+plot(M.Time,stell+0.1,'DisplayName','Stell')
+plot(M.Time,dif,'DisplayName','diff')
+
+maxDiff=max(dif)
+me=find(dif==maxDiff);
+%plot(M.Time(me),10,'o')
+
+
+
+
+f2 = figure;%--------------------------
+f2.Position = [1015,84,831,878];
+f2.Name = "Corrections";
+hold on
+legend()
+
+plot(M.Time,M.cP,'DisplayName','Pitch')
+plot(M.Time,M.cR,'DisplayName','Roll')
+plot(M.Time,M.cYI,'DisplayName','Yaw')
+
