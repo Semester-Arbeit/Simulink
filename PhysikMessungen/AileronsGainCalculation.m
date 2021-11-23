@@ -1,7 +1,7 @@
 close
 clc
 
-run("getAileronsData.m")
+run("../Data/AileronsGain/getAileronsData.m")
 
 figure('Name',"Force of two Ailerons",'NumberTitle','off');
 hold on
@@ -17,7 +17,7 @@ Nm= [torque4 torque3].';
 
 flapgain  = ang.'*ang\ang.'*Nm
 flapgain90= (angles4*angles4.')\(angles4*torque4.')
-%AgLS = inv(angles4*angles4.')*angles4*torque4.'
-yLS= x.*AgLS;
+%Flapgain90 = inv(angles4*angles4.')*angles4*torque4.'
+yLS= x.*flapgain;
 plot(x,yLS)
 legend('Engine:80% #1','Engine:80% #2','Engine:100% #3,','Engine:90% #4','Engine:95% #5','Linearisation')

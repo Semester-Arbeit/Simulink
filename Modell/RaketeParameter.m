@@ -19,14 +19,14 @@ clear("Gravitation","ObjectMass","PitchTraegheit","RollTraegheit","YawTraegheit"
 
 
 %% Regler Parameter
-KpX = 5;
-KiX = 0.5;
-KpY = 5;
-KiY = 0.5;
-KpZ = 100;
-KiZ = 100;
-KpPitch = 2;
-KiPitch = 2;
+KpX = 0;
+KiX = 0;
+KpY = 0;
+KiY = 0;
+KpZ = 0;
+KiZ = 0;
+KpPitch = 1;
+KiPitch = 1;
 KpRoll = 1;
 KiRoll = 1;
 KpYaw = 1;
@@ -35,6 +35,10 @@ KiYaw = 1;
 RegPar = table(KpX,KiX,KpY,KiY,KpZ,KiZ,KpPitch,KiPitch,KpRoll,KiRoll,KpYaw,KiYaw);
 
 clear("KpX","KiX","KpY","KiY","KpZ","KiZ","KpPitch","KiPitch","KpRoll","KiRoll","KpYaw","KiYaw")
+
+%% StepOn
+         %X  Y  Z  Roll Pitch Yaw   
+StepVec =[1; 0; 0; 1;   0;    0];
 
 
 

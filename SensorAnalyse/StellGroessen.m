@@ -1,10 +1,11 @@
-close all
+%close all
 clc
-warning('OFF', 'MATLAB:table:ModifiedAndSavedVarnames')
-M = readtable("../Data/SensorTest_18.11/FlightLog05.csv");
+clear
+%warning('OFF', 'MATLAB:table:ModifiedAndSavedVarnames')
+M = readtable("../Data/SensorTest_18.11/FlightLog03.csv");
 
-sens= M.xGyro;
-stell = M.cR;
+sens= -M.xGyro;
+stell = M.cP;
 dif= sens-stell;
 
 
@@ -16,7 +17,7 @@ dif= sens-stell;
 %--------------------------
 plot(M.Time,sens,'DisplayName','Sens')
 plot(M.Time,stell+0.1,'DisplayName','Stell')
-%plot(M.Time,dif,'DisplayName','diff')
+plot(M.Time,dif,'DisplayName','diff')
 
 maxDiff=max(dif)
 me=find(dif==maxDiff);
