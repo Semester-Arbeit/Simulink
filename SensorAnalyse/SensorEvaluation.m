@@ -5,8 +5,8 @@ clc
 
 
 
-D = readtable("../Data/SensorTest_18.11/FlightLog01.csv");
-P = readtable("../Data/Flight22_nov/POWERLOG_Flight22_Nov.csv");
+D = readtable("../Data/25_nov/FlightLog2.csv");
+
 D.Time=D.Time-D.Time(1);
 
 % figure
@@ -22,7 +22,7 @@ f0.Name = "Sensor Analyse"; subplot(311)
 hold on
 legend()                                                        
                                                       
-plot(D.Time,D.sensPitch,'DisplayName','sensPitch')
+plot(D.Time,D.Pitch,'DisplayName','Pitch')
 plot(D.Time,D.yGyro,'DisplayName','yGyro')
 plot(D.Time,cumtrapz(D.yGyro)./100,'DisplayName','yGyro Integrated')
 
@@ -31,7 +31,7 @@ plot(D.Time,cumtrapz(D.yGyro)./100,'DisplayName','yGyro Integrated')
 subplot(312)
 hold on
 legend()
-plot(D.Time,-D.sensRoll,'DisplayName','sensRoll')
+plot(D.Time,-D.Roll,'DisplayName','Roll')
 plot(D.Time,D.xGyro,'DisplayName','xGyro')
 plot(D.Time,cumtrapz(D.xGyro)./100,'DisplayName','xGyro Integrated')
 
@@ -39,10 +39,9 @@ plot(D.Time,cumtrapz(D.xGyro)./100,'DisplayName','xGyro Integrated')
 subplot(313)
 hold on
 legend()
-plot(D.Time,D.sensYaw,'DisplayName','sensYaw')
+plot(D.Time,D.Yaw,'DisplayName','Yaw')
 plot(D.Time,D.ZGyro,'DisplayName','ZGyro')
 plot(D.Time,cumtrapz(D.ZGyro)./100,'DisplayName','ZGyroIntegrated')
-
 
 
 

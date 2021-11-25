@@ -37,8 +37,8 @@ RegPar = table(KpX,KiX,KpY,KiY,KpZ,KiZ,KpPitch,KiPitch,KpRoll,KiRoll,KpYaw,KiYaw
 clear("KpX","KiX","KpY","KiY","KpZ","KiZ","KpPitch","KiPitch","KpRoll","KiRoll","KpYaw","KiYaw")
 
 %% StepOn
-         %X  Y  Z  Roll Pitch Yaw   
-StepVec =[1; 0; 0; 1;   0;    0];
+         %X  Y  Z    
+StepVec =[1; 0; 0];
 
 
 
