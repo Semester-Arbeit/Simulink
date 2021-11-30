@@ -6,14 +6,14 @@ run RaketeParameter.m
 %%
 
 
-StepVec=[1;0;0;0;0;0];
+StepVec=[0;1;-0;0;0;0];
 
 
 
 
 SF=Simulate;
 
-
+close all 
 
 %% Behavioral
 f1=figure;
@@ -30,8 +30,16 @@ plot(SF.Time,SF.state.Pitchspeed,'DisplayName','Pitchacc')
 plot(SF.Time,SF.state.Yawpos,'DisplayName','Yawpos')
 plot(SF.Time,SF.state.Yawspeed,'DisplayName','Yawspeed')
 
-plot(SF.Time,SF.state.Zpos,'DisplayName','Zpos')
-plot(SF.Time,SF.state.Zspeed,'DisplayName','Zspeed')
+plot(SF.Time,SF.state.Xpos,'--','DisplayName','Xpos')
+plot(SF.Time,SF.state.Xspeed,'--','DisplayName','Xspeed')
+
+plot(SF.Time,SF.state.Ypos,'--','DisplayName','Ypos')
+plot(SF.Time,SF.state.Yspeed,'--','DisplayName','Yspeed')
+
+plot(SF.Time,SF.state.Zpos,'--','DisplayName','Zpos')
+plot(SF.Time,SF.state.Zspeed,'--','DisplayName','Zspeed')
+
+
 
 
 
