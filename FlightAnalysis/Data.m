@@ -1,14 +1,22 @@
+close all
 
-
-
-
-D = readtable("YawInertiaPendel02.csv");
-D = D(1300:end,["Time","sensYaw","ZGyro"]);
+D = readtable("../Data/26_nov/FlightLog 9.csv");
+D = readtable("FlightLog.csv");
 D.Time=D.Time-D.Time(1);
-plot(D.Time,D.sensYaw)
-hold on
-plot(D.Time,D.ZGyro)
-legend('pos','speed')
-plot(D.Time,cumtrapz(D.sensYaw))
 
-plot(D.Time,cumtrapz(D.sensYaw./D.ZGyro))
+
+f0 = figure;
+f0.Position = [2,84,1769,893];
+f0.Name = "Sensor Analyse"; 
+%subplot(311) 
+hold on
+legend() 
+grid on
+
+
+plot(D.Time,D.Pitch,'DisplayName','Pitch')
+%plot(D.Time,D.yGyro,'DisplayName','yGyro')
+plot(D.Time,D.cP,'DisplayName','flapValue')
+
+
+

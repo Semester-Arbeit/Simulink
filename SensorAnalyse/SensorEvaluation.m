@@ -5,7 +5,7 @@ clc
 
 
 
-D = readtable("../Data/25_nov/FlightLog2.csv");
+D = readtable("../Data/26_nov/FlightLog 9.csv");
 
 D.Time=D.Time-D.Time(1);
 
