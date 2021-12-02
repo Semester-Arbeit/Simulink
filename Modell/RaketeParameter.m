@@ -13,7 +13,7 @@ FlapGain = 0.0235; % (abweichung von 0 pos in deg) * FlapGain = Drehmoment auf O
 MaxFlapAngle = 30;
 
 
-RakParam = table(Gravitation,ObjectMass,PitchTraegheit,RollTraegheit,YawTraegheit,PropGain,PropOffset,DriftGain,FlapGain,MaxFlapAngle);
+SimParam.Physics = table(Gravitation,ObjectMass,PitchTraegheit,RollTraegheit,YawTraegheit,PropGain,PropOffset,DriftGain,FlapGain,MaxFlapAngle);
 clear("Gravitation","ObjectMass","PitchTraegheit","RollTraegheit","YawTraegheit","PropGain","PropOffset","DriftGain","FlapGain","MaxFlapAngle")
 
 
@@ -32,23 +32,23 @@ KiRoll = 1;
 KpYaw = 5;
 KiYaw = 12;
 
-RegPar = table(KpX,KiX,KpY,KiY,KpZ,KiZ,KpPitch,KiPitch,KpRoll,KiRoll,KpYaw,KiYaw);
+SimParam.Controler = table(KpX,KiX,KpY,KiY,KpZ,KiZ,KpPitch,KiPitch,KpRoll,KiRoll,KpYaw,KiYaw);
 
 clear("KpX","KiX","KpY","KiY","KpZ","KiZ","KpPitch","KiPitch","KpRoll","KiRoll","KpYaw","KiYaw")
 
 %% StepOn
          %X  Y  Z Roll Pitch Yaw    
-StepVec =[1; 0; 0;   0;   0;   0];
+SimParam.Step = array2table(zeros(1,6));
+SimParam.Step.Properties.VariableNames={'X','Y','Z','Roll','Pitch','Yaw'};
 
 %% Disturbance
 
-DisVec= array2table(zeros(1,18));
-DisVec.Properties.VariableNames={'Xpos','Xspeed','Xacc',...
-                                  'Ypos','Yspeed','Yacc',...
-                                  'Zpos','Zspeed','Zacc',...
-                                  'Rollpos','Rollspeed','Rollacc',...
-                                  'Pitchpos','Pitchspeed','Pitchacc',...
-                                  'Yawpos','Yawspeed','Yawacc'};
+SimParam.Disturbance= array2table(zeros(1,6));
+SimParam.Disturbance.Properties.VariableNames={'X','Y','Z','Roll','Pitch','Yaw'};
+
+
+%% Update SimParam
+
 
 
 

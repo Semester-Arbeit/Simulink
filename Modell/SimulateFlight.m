@@ -6,7 +6,6 @@ run RaketeParameter.m
 %%
 
 
-StepVec=[0;0;-0;0;0;0];
 
 
 
@@ -15,26 +14,32 @@ SF=Simulate;
 
 close all 
 
-%% Behavioral
+% Behavioral
 f1=figure;
 f1.Position = [24,104,990,858];
+grid on
 hold on
 legend()
 
 plot(SF.Time,SF.state.Rollpos,'DisplayName','Rollpos')
 plot(SF.Time,SF.state.Rollspeed,'DisplayName','Rollspeed')
+plot(SF.Time,SF.state.Rollspeed,'DisplayName','Rollspeed')
 
 plot(SF.Time,SF.state.Pitchpos,'DisplayName','Pitchpos')
-plot(SF.Time,SF.state.Pitchspeed,'DisplayName','Pitchacc')
+plot(SF.Time,SF.state.Pitchspeed,'DisplayName','Pitchspeed')
+plot(SF.Time,SF.state.Pitchacc,'DisplayName','Pitchacc')
 
 plot(SF.Time,SF.state.Yawpos,'DisplayName','Yawpos')
 plot(SF.Time,SF.state.Yawspeed,'DisplayName','Yawspeed')
+plot(SF.Time,SF.state.Yawacc,'DisplayName','Yawspeed')
 
 plot(SF.Time,SF.state.Xpos,'--','DisplayName','Xpos')
 plot(SF.Time,SF.state.Xspeed,'--','DisplayName','Xspeed')
+plot(SF.Time,SF.state.Xacc,'--','DisplayName','Xacc')
 
 plot(SF.Time,SF.state.Ypos,'--','DisplayName','Ypos')
 plot(SF.Time,SF.state.Yspeed,'--','DisplayName','Yspeed')
+plot(SF.Time,SF.state.Yacc,'--','DisplayName','Yacc')
 
 plot(SF.Time,SF.state.Zpos,'--','DisplayName','Zpos')
 plot(SF.Time,SF.state.Zspeed,'--','DisplayName','Zspeed')
