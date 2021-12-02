@@ -23,11 +23,11 @@ KpX = 1;
 KiX = 1;
 KpY = 1;
 KiY = 1;
-KpZ = 0;
+KpZ = 1;
 KiZ = 1;
-KpPitch = 1 ;
+KpPitch = 1.4 ;
 KiPitch = 1;
-KpRoll = 1;
+KpRoll = 1.4;
 KiRoll = 1;
 KpYaw = 5;
 KiYaw = 12;
@@ -40,9 +40,15 @@ clear("KpX","KiX","KpY","KiY","KpZ","KiZ","KpPitch","KiPitch","KpRoll","KiRoll",
          %X  Y  Z Roll Pitch Yaw    
 StepVec =[1; 0; 0;   0;   0;   0];
 
+%% Disturbance
 
-
-
+DisVec= array2table(zeros(1,18));
+DisVec.Properties.VariableNames={'Xpos','Xspeed','Xacc',...
+                                  'Ypos','Yspeed','Yacc',...
+                                  'Zpos','Zspeed','Zacc',...
+                                  'Rollpos','Rollspeed','Rollacc',...
+                                  'Pitchpos','Pitchspeed','Pitchacc',...
+                                  'Yawpos','Yawspeed','Yawacc'};
 
 
 

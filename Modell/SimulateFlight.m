@@ -6,7 +6,7 @@ run RaketeParameter.m
 %%
 
 
-StepVec=[0;0;-10;0;0;0];
+StepVec=[0;0;-0;0;0;0];
 
 
 
@@ -38,6 +38,7 @@ plot(SF.Time,SF.state.Yspeed,'--','DisplayName','Yspeed')
 
 plot(SF.Time,SF.state.Zpos,'--','DisplayName','Zpos')
 plot(SF.Time,SF.state.Zspeed,'--','DisplayName','Zspeed')
+%plot(SF.Time,SF.state.Zacc,'--','DisplayName','Zacc')
 
 
 
