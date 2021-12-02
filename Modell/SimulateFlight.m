@@ -6,7 +6,7 @@ run RaketeParameter.m
 %%
 
 
-StepVec=[0;0;-0;0;0;1];
+StepVec=[0;0;-10;0;0;0];
 
 
 

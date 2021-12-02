@@ -3,6 +3,7 @@ function SF = Simulate()
 %   Detailed explanation goes here
 out=sim("RaketenMolell_V1.slx");
 
+
 Tmp = timeseries2timetable(out.RM_State);
 SF.Time = table(Tmp.Time);
 SF.Time = SF.Time.Var1;
