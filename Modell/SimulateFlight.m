@@ -6,7 +6,7 @@ run RaketeParameter.m
 %%
 
 
-StepVec=[0;1;-0;0;0;0];
+StepVec=[0;0;-0;0;0;1];
 
 
 
@@ -62,7 +62,7 @@ plot(SF.Time,SF.stell.flapYN+0.04,'DisplayName','flapYN')
 
 subplot(2,1,2)
 legend()
-title('Regler Resultate')
+title('Simulierter Regler')
 hold on
 
 
