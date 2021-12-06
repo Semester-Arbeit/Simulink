@@ -1,6 +1,5 @@
 function SF = Simulate()
-%SIMULATE Summary of this function goes here
-%   Detailed explanation goes here
+
 out=sim("RaketenMolell_V1.slx");
 
 
