@@ -6,7 +6,7 @@ PitchTraegheit = 0.0362;%gemessen 29.10
 RollTraegheit = 0.0430;%gemessen 29.10
 YawTraegheit = 0.0335;%gemessen 29.10
 
-PropGain = (ObjectMass*Gravitation)/0.9; % prop signal * Propgain = auftriebKraft .. Annahme bei 0.8 schwebend
+PropGain = (ObjectMass*Gravitation)/0.8; % prop signal * Propgain = auftriebKraft .. Annahme bei 0.8 schwebend
 PropOffset = 0.08; %Abstand von Propeller zu Massepunkt
 DriftGain = 1; %  wieviel Kraft generiert eine Schieflage in rad
 FlapGain = 0.0235; % (abweichung von 0 pos in deg) * FlapGain = Drehmoment auf Objekt mit Least^2 von Messungen 90% und 100% Schub
@@ -44,8 +44,8 @@ SimParam.Step.Properties.VariableNames={'X','Y','Z','Roll','Pitch','Yaw'};
 
 %% Disturbance
 
-SimParam.Disturbance= array2table(zeros(1,6));
-SimParam.Disturbance.Properties.VariableNames={'X','Y','Z','Roll','Pitch','Yaw'};
+SimParam.Disturbance= array2table(zeros(1,8));
+SimParam.Disturbance.Properties.VariableNames={'X','Y','Z','Roll','Pitch','Yaw','stepON','stepOFF'};
 
 
 %% Update SimParam

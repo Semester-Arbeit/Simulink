@@ -1,11 +1,11 @@
 clc
 close all
-run RaketeParameter.m
+%run RaketeParameter.m
 
 
 
 
-%%
+
 
 
 
@@ -18,7 +18,7 @@ close all
 
 % Behavioral
 f1=figure;
-f1.Position = [24,104,990,858];
+f1.Position = [925,579,990,398];
 grid on
 hold on
 legend()
@@ -45,16 +45,16 @@ plot(SF.Time,SF.state.Yacc,':','Color',[0.3010 0.7450 0.9330],'DisplayName','Yac
 
 plot(SF.Time,SF.state.Zpos,'Color',[0.4660 0.6740 0.1880],'DisplayName','Zpos')
 plot(SF.Time,SF.state.Zspeed,'-.','Color',[0.4660 0.6740 0.1880],'DisplayName','Zspeed')
-%plot(SF.Time,SF.state.Zacc,':','Color',[0.4660 0.6740 0.1880],'DisplayName','Zacc')
+plot(SF.Time,SF.state.Zacc,':','Color',[0.4660 0.6740 0.1880],'DisplayName','Zacc')
 
 
 
 
 
-%% Sollwerte
+% Sollwerte
 f2=figure;
 
-f2.Position = [1015,84,831,878];
+f2.Position = [923,75,988,424];
 subplot(2,1,1)
 legend()
 title('Aktor Werte')
@@ -66,7 +66,7 @@ plot(SF.Time,SF.stell.flapXN+0.02,'DisplayName','flapXN')
 plot(SF.Time,SF.stell.flapYP+0.03,'DisplayName','flapYP')
 plot(SF.Time,SF.stell.flapYN+0.04,'DisplayName','flapYN')
 
-%% Regler Berechnung
+% Regler Berechnung
 
 subplot(2,1,2)
 legend()
