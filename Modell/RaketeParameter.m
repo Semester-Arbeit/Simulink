@@ -6,7 +6,7 @@ PitchTraegheit = 0.0362;%gemessen 29.10
 RollTraegheit = 0.0430;%gemessen 29.10
 YawTraegheit = 0.0335;%gemessen 29.10
 
-PropGain = (ObjectMass*Gravitation)/0.8; % prop signal * Propgain = auftriebKraft .. Annahme bei 0.8 schwebend
+PropGain = (ObjectMass*Gravitation)/0.9; % prop signal * Propgain = auftriebKraft .. Annahme bei 0.8 schwebend
 PropOffset = 0.08; %Abstand von Propeller zu Massepunkt
 DriftGain = 1; %  wieviel Kraft generiert eine Schieflage in rad
 FlapGain = 0.0235; % (abweichung von 0 pos in deg) * FlapGain = Drehmoment auf Objekt mit Least^2 von Messungen 90% und 100% Schub
@@ -19,20 +19,21 @@ clear("Gravitation","ObjectMass","PitchTraegheit","RollTraegheit","YawTraegheit"
 
 
 %% Regler Parameter
-KpX = 1;
-KiX = 1;
-KpY = 1;
-KiY = 1;
-KpZ = 1;
-KiZ = 1;
-KpPitch = 1.4 ;
-KiPitch = 1;
-KpRoll = 1.4;
+KiX = 40;
+KpX = 10;
+KiY = 40;
+KpY = 10;
+KiZ = 60;
+KpZ = 10;
 KiRoll = 1;
-KpYaw = 5;
-KiYaw = 12;
+KpRoll = 1;
+KiPitch = 1.4;
+KpPitch = 1.5 ;
+KiYaw = 1;
+KpYaw = 1;
 
-SimParam.Controler = table(KpX,KiX,KpY,KiY,KpZ,KiZ,KpPitch,KiPitch,KpRoll,KiRoll,KpYaw,KiYaw);
+
+SimParam.Controler = table(KiX,KpX,KiY,KpY,KiZ,KpZ,KiRoll,KpRoll,KiPitch,KpPitch,KiYaw,KpYaw);
 
 clear("KpX","KiX","KpY","KiY","KpZ","KiZ","KpPitch","KiPitch","KpRoll","KiRoll","KpYaw","KiYaw")
 

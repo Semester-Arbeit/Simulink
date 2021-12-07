@@ -1,7 +1,9 @@
 clc
 close all
 run RaketeParameter.m
-
+%%
+                %X  Y   Z  Roll Pitch  Yaw
+SimParam.Step = [0	0	0	0	 0	    0];
 
 
 
