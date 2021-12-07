@@ -2,9 +2,9 @@
 %%  Physical Parameter
 Gravitation = 9.8067;  % nach metas.ch... gravitationszonen schweiz
 ObjectMass = 3.34; %gemessen 29.10
-PitchTraegheit = 0.0362*(360/2*pi);%gemessen 29.10 umgewandelt in pro deg anstatt rad
-RollTraegheit = 0.0430*(360/2*pi);%gemessen 29.10
-YawTraegheit = 0.0335*(360/2*pi);%gemessen 29.10
+PitchTraegheit = 0.0362;%gemessen 29.10 
+RollTraegheit = 0.0430;%gemessen 29.10
+YawTraegheit = 0.0335;%gemessen 29.10
 
 PropGain = (ObjectMass*Gravitation)/0.8; % prop signal * Propgain = auftriebKraft .. Annahme bei 0.8 schwebend
 PropOffset = 0.08; %Abstand von Propeller zu Massepunkt
