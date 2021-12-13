@@ -23,17 +23,7 @@ grid on
 hold on
 legend()
 
-plot(SF.Time,SF.state.Rollpos,'Color',[0.8500 0.3250 0.0980],'DisplayName','Rollpos')
-plot(SF.Time,SF.state.Rollspeed,'-.','Color',[0.8500 0.3250 0.0980],'DisplayName','Rollspeed')
-plot(SF.Time,SF.state.Rollspeed,':','Color',[0.8500 0.3250 0.0980],'DisplayName','Rollspeed')
 
-plot(SF.Time,SF.state.Pitchpos,'Color',[0.9290 0.6940 0.1250],'DisplayName','Pitchpos')
-plot(SF.Time,SF.state.Pitchspeed,'-.','Color',[0.9290 0.6940 0.1250],'DisplayName','Pitchspeed')
-plot(SF.Time,SF.state.Pitchacc,':','Color',[0.9290 0.6940 0.1250],'DisplayName','Pitchacc')
-
-plot(SF.Time,SF.state.Yawpos,'Color',[0 0.4470 0.7410],'DisplayName','Yawpos')
-plot(SF.Time,SF.state.Yawspeed,'-.','Color',[0 0.4470 0.7410],'DisplayName','Yawspeed')
-plot(SF.Time,SF.state.Yawacc,':','Color',[0 0.4470 0.7410],'DisplayName','Yawspeed')
 
 plot(SF.Time,SF.state.Xpos,'Color',[0.6350 0.0780 0.1840],'DisplayName','Xpos')
 plot(SF.Time,SF.state.Xspeed,'-.','Color',[0.6350 0.0780 0.1840],'DisplayName','Xspeed')
@@ -47,7 +37,17 @@ plot(SF.Time,SF.state.Zpos,'Color',[0.4660 0.6740 0.1880],'DisplayName','Zpos')
 plot(SF.Time,SF.state.Zspeed,'-.','Color',[0.4660 0.6740 0.1880],'DisplayName','Zspeed')
 plot(SF.Time,SF.state.Zacc,':','Color',[0.4660 0.6740 0.1880],'DisplayName','Zacc')
 
+plot(SF.Time,SF.state.Rollpos,'Color',[0.8500 0.3250 0.0980],'DisplayName','Rollpos')
+plot(SF.Time,SF.state.Rollspeed,'-.','Color',[0.8500 0.3250 0.0980],'DisplayName','Rollspeed')
+plot(SF.Time,SF.state.Rollspeed,':','Color',[0.8500 0.3250 0.0980],'DisplayName','Rollspeed')
 
+plot(SF.Time,SF.state.Pitchpos,'Color',[0.9290 0.6940 0.1250],'DisplayName','Pitchpos')
+plot(SF.Time,SF.state.Pitchspeed,'-.','Color',[0.9290 0.6940 0.1250],'DisplayName','Pitchspeed')
+plot(SF.Time,SF.state.Pitchacc,':','Color',[0.9290 0.6940 0.1250],'DisplayName','Pitchacc')
+
+plot(SF.Time,SF.state.Yawpos,'Color',[0 0.4470 0.7410],'DisplayName','Yawpos')
+plot(SF.Time,SF.state.Yawspeed,'-.','Color',[0 0.4470 0.7410],'DisplayName','Yawspeed')
+plot(SF.Time,SF.state.Yawacc,':','Color',[0 0.4470 0.7410],'DisplayName','Yawspeed')
 
 
 

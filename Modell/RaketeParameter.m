@@ -52,6 +52,8 @@ SimParam.Step.Properties.VariableNames={'X','Y','Z','Roll','Pitch','Yaw'};
 
 SimParam.Disturbance= array2table(zeros(1,8));
 SimParam.Disturbance.Properties.VariableNames={'X','Y','Z','Roll','Pitch','Yaw','stepON','stepOFF'};
+SimParam.Disturbance.stepON=10;
+SimParam.Disturbance.stepOFF=11;
 
 
 %% Update SimParam
