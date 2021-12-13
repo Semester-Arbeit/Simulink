@@ -6,15 +6,21 @@ PitchTraegheit = 0.0362;%gemessen 29.10
 RollTraegheit = 0.0430;%gemessen 29.10
 YawTraegheit = 0.0335;%gemessen 29.10
 
+PropOffset = 0.09; %Abstand von Propeller zu Massepunkt
+PitchTraegheit_shift=PitchTraegheit+ObjectMass*PropOffset^2;
+RollTraegheit_shift=RollTraegheit+ObjectMass*PropOffset^2;
+
+
+
 PropGain = (ObjectMass*Gravitation)/0.8; % prop signal * Propgain = auftriebKraft .. Annahme bei 0.8 schwebend
-PropOffset = 0.08; %Abstand von Propeller zu Massepunkt
+
 DriftGain = 1; %  wieviel Kraft generiert eine Schieflage in rad
 FlapGain = 0.0235; % (abweichung von 0 pos in deg) * FlapGain = Drehmoment auf Objekt mit Least^2 von Messungen 90% und 100% Schub
 MaxFlapAngle = 30;
 
 
-SimParam.Physics = table(Gravitation,ObjectMass,PitchTraegheit,RollTraegheit,YawTraegheit,PropGain,PropOffset,DriftGain,FlapGain,MaxFlapAngle);
-clear("Gravitation","ObjectMass","PitchTraegheit","RollTraegheit","YawTraegheit","PropGain","PropOffset","DriftGain","FlapGain","MaxFlapAngle")
+SimParam.Physics = table(Gravitation,ObjectMass,PitchTraegheit,RollTraegheit,YawTraegheit,PitchTraegheit_shift,RollTraegheit_shift,PropGain,PropOffset,DriftGain,FlapGain,MaxFlapAngle);
+clear("Gravitation","ObjectMass","PitchTraegheit","RollTraegheit","YawTraegheit","PitchTraegheit_shift","RollTraegheit_shift","PropGain","PropOffset","DriftGain","FlapGain","MaxFlapAngle")
 
 
 
