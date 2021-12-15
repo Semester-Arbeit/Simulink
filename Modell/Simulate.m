@@ -1,6 +1,6 @@
 function SF = Simulate()
 
-out=sim("RaketenMolell_V1.slx");
+out=sim("DuctedFanMolell_V1.slx");
 
 
 Tmp = timeseries2timetable(out.RM_State);

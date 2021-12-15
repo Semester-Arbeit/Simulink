@@ -1,6 +1,6 @@
 clc
 close all
-%run RaketeParameter.m
+run SimulationParameter.m
 
 
 

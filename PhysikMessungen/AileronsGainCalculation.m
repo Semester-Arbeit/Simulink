@@ -5,19 +5,22 @@ run("../Data/AileronsGain/getAileronsData.m")
 
 figure('Name',"Force of two Ailerons",'NumberTitle','off');
 hold on
-plot(angles1,torque1,angles2,torque2,angles3,torque3,angles4,torque4,angles5,torque5,Marker="*")
+plot(angles1,F_flap1,"-*",'DisplayName','#1 Engine:80% ')
+plot(angles2,F_flap2,"-*",'DisplayName','#2 Engine:80% ')
+%plot(angles3,F_flap3,"-*",'DisplayName','#3 Engine:100% ')
+plot(angles4,F_flap4,"-*",'DisplayName','#4 Engine:90% ')
+plot(angles5,F_flap5,"-*",'DisplayName','#5 Engine:95% ')
 
 grid on
 
 x=1:60;
 
 
-ang=[angles4 angles3].';
-Nm= [torque4 torque3].';
+ang=[angles1(1,[1:3]) angles2(1,1:7)].';
+Nm= [F_flap1(1,[1:3]) F_flap2(1,1:7)].';
 
-flapgain  = ang.'*ang\ang.'*Nm
-flapgain90= (angles4*angles4.')\(angles4*torque4.')
-%Flapgain90 = inv(angles4*angles4.')*angles4*torque4.'
+flapgain  = (ang.'*ang\ang.'*Nm)
+
 yLS= x.*flapgain;
 plot(x,yLS)
-legend('Engine:80% #1','Engine:80% #2','Engine:100% #3,','Engine:90% #4','Engine:95% #5','Linearisation')
+legend()
