@@ -2,7 +2,7 @@
 
 %close all
 
-PlotDataFromFile('RollInertiaPendel03')
+PlotDataFromFile('../Data/Pendel/RollInertiaPendel03')
 PlotDataFromFile('PitchInertiaPendel02')
 PlotDataFromFile('YawInertiaPendel02')
 

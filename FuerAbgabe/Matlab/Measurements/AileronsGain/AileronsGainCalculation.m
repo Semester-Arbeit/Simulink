@@ -1,7 +1,7 @@
 close
 clc
 
-run("../Data/AileronsGain/getAileronsData.m")
+run("getAileronsData.m")
 
 figure('Name',"Force of two Ailerons",'NumberTitle','off');
 hold on

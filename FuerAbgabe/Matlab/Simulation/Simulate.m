@@ -30,7 +30,7 @@ SF.Corr = array2table(Tmp.Data(:,1:6));
 SF.Corr.Properties.VariableNames = {'X','Y','Z','Pitch','Roll','Yaw'};
 
 
-
+%clear("Tmp","out")
 
 end
 
